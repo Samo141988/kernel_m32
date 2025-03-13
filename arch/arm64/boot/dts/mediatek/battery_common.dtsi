@@ -314,7 +314,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/common/dts/battery_common.m32.dtsi */
+/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/common/dts/battery_common.f22_swa_ins.dtsi */
 &sec_battery {
 		pinctrl-names = "default";
 
@@ -365,13 +365,13 @@
 		battery,wire_cool3_cool2_thresh = <50>;
 		battery,wire_cold_cool3_thresh = <0>;
 
-		battery,wire_warm_current = <1735>;	/* 1734.375=15.625mA *111 */
+		battery,wire_warm_current = <2093>;	/* 0.36C (2098.8mA) */
 		battery,wire_cool1_current = <2500>;	/* 0.72C (mA) */
-		battery,wire_cool2_current = <1155>;	/* 1156.25=15.625mA *74 */
-		battery,wire_cool3_current = <485>;	/* 484.375=15.625mA *31 */
+		battery,wire_cool2_current = <1390>;	/* 0.24C (1399.2mA) */
+		battery,wire_cool3_current = <578>;	/* 0.1C (583mA) */
 
-		battery,high_temp_topoff = <250>;
-		battery,low_temp_topoff = <250>;
+		battery,high_temp_topoff = <300>;
+		battery,low_temp_topoff = <300>;
 		battery,high_temp_float = <4150>;
 		battery,low_temp_float = <4380>;
 
@@ -428,60 +428,49 @@
 		battery,dc_step_chg_type = <0xE9>;
 		battery,dc_step_chg_charge_power = <22000>;
 		battery,dc_step_chg_step = <3>;
-		battery,dc_step_chg_cond_vol = <4050 4230 4380>; /* STEP_CHARGING_CONDITION_VOLTAGE */
+		battery,dc_step_chg_cond_vol = <4090 4230 4380>; /* STEP_CHARGING_CONDITION_VOLTAGE */
 		battery,dc_step_chg_cond_iin = <2030 1825 0>; /* STEP_CHARGING_CONDITION_INPUT_CURRENT */
 		battery,dc_step_chg_iin_check_cnt = <3>;
 		battery,dc_step_chg_cond_soc = <19 62 100>; /* STEP_CHARGING_CONDITION_SOC */
-		battery,dc_step_chg_val_vfloat = <4050 4230 4380>; /* STEP_CHARGING_CONDITION_FLOAT_VOLTAGE */
-		battery,dc_step_chg_val_iout = <4800 3800 3600>;
+		battery,dc_step_chg_val_vfloat = <4090 4230 4380>; /* STEP_CHARGING_CONDITION_FLOAT_VOLTAGE */
+		battery,dc_step_chg_val_iout = <4800 3900 3600>;
 
 		battery,standard_curr = <3600>;
-		battery,expired_time = <10500>; /* 115 + 60 minutes */
+		battery,expired_time = <11400>; /* 130 + 60 minutes */
 		battery,recharging_expired_time = <5400>;
-		battery,battery_full_capacity = <5000>;
+		battery,battery_full_capacity = <6000>;
 		battery,cisd_max_voltage_thr = <5000>; /* batttery ovp dettection voltage */
 
-		battery,ttf_hv_charge_current = <2150>;
-		battery,ttf_dc25_charge_current = <3350>;
-		battery,ttf_capacity = <4150>;
+		battery,factory_chg_limit_max = <70>;
+		battery,factory_chg_limit_min = <65>;
+
+		battery,ttf_capacity = <4911>;
+		battery,ttf_hv_charge_current = <2196>;
+		battery,ttf_dc25_charge_current = <3474>;
 		battery,cv_data = <
-			3390 	 809 	 1815
-			3367 	 821 	 1755
-			3293 	 833 	 1695
-			3004 	 845 	 1634
-			2868 	 855 	 1574
-			2754 	 865 	 1514
-			2534 	 875 	 1453
-			2442 	 884 	 1393
-			2284 	 892 	 1333
-			2144 	 900 	 1272
-			2023 	 907 	 1212
-			1877 	 914 	 1152
-			1790 	 920 	 1091
-			1698 	 927 	 1031
-			1560 	 932 	 970
-			1384 	 938 	 910
-			1477 	 942 	 850
-			1574 	 948 	 790
-			1483 	 953 	 729
-			1391 	 958 	 669
-			1327 	 963 	 609
-			1261 	 967 	 549
-			1195 	 971 	 489
-			1141 	 976 	 428
-			1082 	 979 	 368
-			1040 	 983 	 301
-			972 	 987 	 241
-			931 	 990 	 180
-			887 	 993 	 120
-			859 	 997 	 60
-			816 	 1000 	 0
+			2872	840	1948
+			2720	850	1865
+			2550	860	1797
+			2359	870	1715
+			2237	880	1626
+			2079	890	1535
+			1906	900	1436
+			1847	910	1324
+			1610	920	1215
+			1516	930	1094
+			1640	940	963
+			1426	950	825
+			1327	960	690
+			1147	970	518
+			1042	980	323
+			890	990	116
+			835	1000	0
 		>;
 };
 
 &sec_battery_cable {
-		full_check_current_1st = <750>;
-		full_check_current_2nd = <250>;
+		full_check_current_1st = <850>;
+		full_check_current_2nd = <300>;
 
 		current_group_4 {
 			charging_current = <2500>;
